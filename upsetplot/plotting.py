@@ -479,6 +479,8 @@ class UpSet:
         if self._horizontal:
             colors = reversed(colors)
 
+        patterns = [ "/" , "\\" , "|" , "-" , "+" , "x", "o", "O", ".", "*" ];itr = 0
+
         x = np.arange(len(data_df))
         cum_y = None
         all_rects = []
@@ -493,6 +495,11 @@ class UpSet:
                 label=name if use_labels else None,
                 align="center",
             )
+            if True:
+                for rect in rects.get_children():
+                    rect.set_hatch(patterns[itr % len(patterns)])
+                itr += 1
+
             cum_y = y if cum_y is None else cum_y + y
             all_rects.extend(rects)
 
