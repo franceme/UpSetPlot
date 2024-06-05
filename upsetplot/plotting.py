@@ -479,7 +479,7 @@ class UpSet:
         if self._horizontal:
             colors = reversed(colors)
 
-        patterns = [ "/" , "\\" , "|" , "-" , "+" , "x", "o", "O", ".", "*", '//', '\\\\', '||', '--', '++', 'xx', 'oo', 'OO', '..', '**' ];itr = 0
+        patterns = [ "/" , "\\" , "|" , "-" , "+" , "x", "o", "O", ".", "*", '/o', '\\|', '|*', '-\\', '+o', 'x*', 'o-', 'O|', 'O.', '*-', '//', '\\\\', '||', '--', '++', 'xx', 'oo', 'OO', '..', '**' ];itr = 0
 
         x = np.arange(len(data_df))
         cum_y = None
