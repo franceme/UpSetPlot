@@ -544,8 +544,11 @@ class UpSet:
             ax.legend()
 
         if False: #Incase I need to export the legend to itself. #>> https://stackoverflow.com/questions/5735208/remove-the-legend-on-a-matplotlib-figure && https://stackoverflow.com/questions/4534480/get-legend-as-a-separate-picture-in-matplotlib
+            handles, labels = ax.get_legend_handles_labels()
+            handles, labels = reversed(handles), reversed(labels)
+            
             figlegend = plt.figure(figsize=(3,2))
-            figlegend.legend(ax.get_legend_handles_labels()[0], ax.get_legend_handles_labels()[1])
+            figlegend.legend(handles, labels)
             figlegend.savefig("stubby.png")
             ax.get_legend().remove()
 
